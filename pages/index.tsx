@@ -6,6 +6,7 @@ import Masthead from "@/components/masthead";
 import Introduction from "@/components/introduction";
 import Vision from "@/components/vision";
 import Values from "@/components/values";
+import PartnersSection from "@/components/partner";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -62,6 +63,20 @@ const Home: NextPage = () => {
     }
   ]
 
+  const partners = [
+    {
+      name: "Sembel Khishig LLC",
+      logo: "/assets/sponsor1.svg"
+    },
+    {
+      name: "Europharma LLC",
+      logo: "/assets/sponsor2.svg"
+    },
+    {
+      name: "Mirae Well Life Co.,Ltd",
+      logo: "/assets/sponsor3.svg"
+    }
+  ]
   return (
     <div>
       <Head>
@@ -76,6 +91,7 @@ const Home: NextPage = () => {
       />
       <Vision cardData={cardData} />
       <Values cardData={valuesData} title={t("values")} cards={cards} />
+      <PartnersSection title={t("partnersBody")} partners={partners} img={"/assets/profile.svg"} />
     </div>
   );
 };
