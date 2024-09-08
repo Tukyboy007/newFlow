@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import Masthead from "@/components/masthead";
 import Introduction from "@/components/introduction";
 import Vision from "@/components/vision";
+import Values from "@/components/values";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -31,6 +32,35 @@ const Home: NextPage = () => {
     }
   ];
 
+  const valuesData = [
+    {
+      title: t("values1"),
+      icon: "/assets/guard.svg"  // Use 'icon' instead of 'img'
+    },
+    {
+      title: t("values2"),
+      icon: "/assets/hammer.svg"
+    },
+    {
+      title: t("values3"),
+      icon: "/assets/jinluur.svg"
+    },
+    {
+      title: t("values4"),
+      icon: "/assets/people.svg"
+    }
+  ]
+
+  const cards = [
+    {
+      text: t("productsBody1"),
+      img: "/assets/box.svg"
+    },
+    {
+      text: t("productsBody2"),
+      img: "/assets/shipment.svg"
+    }
+  ]
 
   return (
     <div>
@@ -45,6 +75,7 @@ const Home: NextPage = () => {
         text2={t("introBody2")}
       />
       <Vision cardData={cardData} />
+      <Values cardData={valuesData} title={t("values")} cards={cards} />
     </div>
   );
 };
