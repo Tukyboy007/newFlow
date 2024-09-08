@@ -10,7 +10,10 @@ module.exports = {
         height:{
           'half-screen' : '50vh'
         }
-      }
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
     },
   },
   plugins: [],
