@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { ScrollContext } from "../utils/scroll-observer";
+import Navbar from "./navbar";
 
 const Masthead: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -24,35 +25,32 @@ const Masthead: React.FC = () => {
       style={{
         transform: `translateY(-${progress * 20}vh)`,
       }}
-      className="min-h-screen flex flex-col items-center justify-center sticky top-0 -z-10  bg-cover bg-center bg-no-repeat "
-      style={{ backgroundImage: `url('/assets/back.webp')`, transform: `translateY(-${progress * 20}vh)` }}
+      className="min-h-screen flex flex-col items-center justify-center sticky top-0"
     >
-      <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
-      <div
-        className={`flex-grow-0 pt-10 transition-opacity duration-1000
+            <div
+        className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       >
-        <Image
-          src="/assets/logo.svg"
-          width={128 / 3}
-          height={114 / 3}
-          alt="logo"
-        />
+        <Navbar/>
       </div>
-      <div className="p-12 font-bold z-10 text-white drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center flex-1 flex item-center justify-center flex-col">
-
-        <h1 className="mb-6 text-4xl xl:text-5xl">CARAVEN</h1>
-        <h2 className="mb-2 text-2xl xl:text-3xl tracking-tight flex flex-col">
-          <span>TMB TRADE LLC</span>
-          <span>done right</span>
+        <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
+         <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
+      <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">
+        <h1 className="-mb-3 text-[50px] xl:text-[120px]">CARAVAN</h1>
+        <h2 className="mb-3 flex flex-col gap-2 font-roboto font-light">
+          <span className=" text-[20px] mb-2 xl:text-[40px] tracking-widest">TMB TRADE LLC</span>
+          <div>
+            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[1.5px]">Silk Road to Worldwide</span>
+          </div>
         </h2>
       </div>
       <div
-        className={`flex-grow-0 pb-20 md:pd-10 transition-all duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
-          }`}
+        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${
+          imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
+        }`}
       >
         <Image
-          alt=""
+            alt=""
           src="/assets/arrow-down.png"
           width={188 / 3}
           height={105 / 3}
