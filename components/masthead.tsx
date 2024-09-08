@@ -25,7 +25,7 @@ const Masthead: React.FC = () => {
       style={{
         transform: `translateY(-${progress * 20}vh)`,
       }}
-      className="min-h-screen flex flex-col items-center justify-center sticky top-0"
+      className="min-h-screen flex flex-col items-center justify-center "
     >
             <div
         className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
@@ -40,7 +40,7 @@ const Masthead: React.FC = () => {
         <h2 className="mb-3 flex flex-col gap-2 font-roboto font-light">
           <span className=" text-[20px] mb-2 xl:text-[40px] tracking-widest">TMB TRADE LLC</span>
           <div>
-            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[1.5px]">Silk Road to Worldwide</span>
+            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[px]">Silk Road to Worldwide</span>
           </div>
         </h2>
       </div>
@@ -57,7 +57,6 @@ const Masthead: React.FC = () => {
           onLoad={handleImageLoaded}
         />
       </div>
-
     </div>
   );
 };

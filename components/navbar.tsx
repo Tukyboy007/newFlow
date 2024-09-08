@@ -10,13 +10,15 @@ const Navbar: React.FC = () => {
         { name: 'Contact', link: '/contact' },
       ];
     return(
-        <nav className="p-4 flex flex-row justify-around">
-           <Image
-            alt=""
-          src="/assets/arrow-down.png"
-          width={188 / 3}
-          height={105 / 3}
+        <nav className="p-4 xl:flex md:flex flex-row justify-around hidden px-20 gap-10 z-10 w-full sticky top-0">
+        <Image
+            className='translate-x-15 cursor-pointer'
+          alt=""
+          src="/assets/logo.svg"
+          width={290}
+          height={9}
         />
+        <div className='w-[40%] pl-5'>
         <ul className="flex space-x-6 font-bold">
           {navItems.map((item, index) => (
             <li key={index} className='text-[#392467] px-4 py-2 hover:bg-[#392467] hover:text-[white] rounded-[25px] transition-all duration-300 cursor-pointer'>
@@ -26,10 +28,12 @@ const Navbar: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className='flex flex-row px-4 py-2  text-[#c56b2f] cursor-pointer'>
+        </div>
+        <div className='flex flex-row px-4  text-[#c56b2f] cursor-pointer space-x-1 -translate-x-20'>
             <h1 className='font-bold '>EN</h1>
             <h1>MG</h1>
         </div>
+
       </nav>
     )
 }
