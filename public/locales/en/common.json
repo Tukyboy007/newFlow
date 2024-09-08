@@ -1,7 +1,33 @@
 {
-  "welcome": "Welcome to our site!",
+  "home": "Home",
+  "about": "About",
+  "partners": "Partners",
+  "contact": "Contacts",
   "intro": "Introduction",
-  "introBody": "We have been operating in the field of foreign trade since 2022. Our company specialises in household goods, building materials, computer equipment, heavy machinery and services.We aim to innovate in our industry and introduce modern technical solutions.",
-  "mission": "Mission"
-
+  "introBody1": "We have been operating in the field of foreign trade since 2022. Our company specialises in household goods, building materials, computer equipment, heavy machinery and services.",
+  "introBody2": "We aim to innovate in our industry and introduce modern technical solutions.",
+  "mission": "Mission",
+  "missionBody": "Pay once, use for a long time! To act as a bridge between domestic and foreign companies, providing quality products and services that fully meet the needs of the market. Environmentally friendly, recyclable and safe.",
+  "vision": "Vision",
+  "visionBody": "Continuous development! In the next five years, we aim to open branches in Central Asia and Europe and expand our business. Build a facility to meet international standard requirements.",
+  "principles": "Principles",
+  "principlesBody": [
+    "Product Quality Assurance",
+    "Continuous Reliable Supply",
+    "Market Competitive Low Prices",
+    "Flexible Terms",
+    "Highly Qualified Professionals"
+  ],
+  "values": "Our Values",
+  "values1": "Quality & Satisfaction",
+  "values2": "Business Ethics",
+  "values3": "Transparency & Fair Competition",
+  "values4": "Commitment to Social Responsibility",
+  "products": "Products & Services",
+  "partnersBody": "Our Partners",
+  "productsBody1": "We supply 3 types of adult diapers produced in Korea that meet the requirements of ISO standards.",
+  "productsBody2": "Research the Central Asian market, import and export goods and consulting.",
+  "contactBody1": "#19, 4th Floor, Building 32b, Zaisan toiruu street 11th Khoroo, Khan-Uul District Ulaanbaatar, Mongolia",
+  "contactBody2": "Tel: +976 99702877 (Mongolia)",
+  "contactBody3": "Tel: +43 677 617 31002 (Austria)"
 }
