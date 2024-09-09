@@ -11,72 +11,72 @@ import PartnersSection from "@/components/partner";
 const Home: NextPage = () => {
   const { t } = useTranslation();
 
-  const missionBody = t("missionBody");  // Should return string
-  const visionBody = t("visionBody");    // Should return string
-  const principlesBody = t("principlesBody", { returnObjects: true });  // Ensure it returns an array
+  const missionBody = t("missionBody"); // Should return string
+  const visionBody = t("visionBody"); // Should return string
+  const principlesBody = t("principlesBody", { returnObjects: true }); // Ensure it returns an array
 
   const cardData = [
     {
       title: t("mission"),
       text: missionBody,
-      image: "/assets/mission.svg"  // Corrected image path
+      image: "/assets/mission.svg", // Corrected image path
     },
     {
       title: t("vision"),
       text: visionBody,
-      image: "/assets/vision.svg"  // Corrected image path
+      image: "/assets/vision.svg", // Corrected image path
     },
     {
       title: t("principles"),
       text: Array.isArray(principlesBody) ? principlesBody : [principlesBody],
-      image: "/assets/principles.svg"  // Corrected image path
-    }
+      image: "/assets/principles.svg", // Corrected image path
+    },
   ];
 
   const valuesData = [
     {
       title: t("values1"),
-      icon: "/assets/guard.svg"  // Use 'icon' instead of 'img'
+      icon: "/assets/guard.svg", // Use 'icon' instead of 'img'
     },
     {
       title: t("values2"),
-      icon: "/assets/hammer.svg"
+      icon: "/assets/hammer.svg",
     },
     {
       title: t("values3"),
-      icon: "/assets/jinluur.svg"
+      icon: "/assets/jinluur.svg",
     },
     {
       title: t("values4"),
-      icon: "/assets/people.svg"
-    }
-  ]
+      icon: "/assets/people.svg",
+    },
+  ];
 
   const cards = [
     {
       text: t("productsBody1"),
-      img: "/assets/box.svg"
+      img: "/assets/back1.png",
     },
     {
       text: t("productsBody2"),
-      img: "/assets/shipment.svg"
-    }
-  ]
+      img: "/assets/back3.png",
+    },
+  ];
 
   const partners = [
     {
       name: "Sembel Khishig LLC",
-      logo: "/assets/sponsor1.svg"
+      logo: "/assets/sponsor1.svg",
     },
     {
       name: "Europharma LLC",
-      logo: "/assets/sponsor2.svg"
+      logo: "/assets/sponsor2.svg",
     },
     {
       name: "Mirae Well Life Co.,Ltd",
-      logo: "/assets/sponsor3.svg"
-    }
-  ]
+      logo: "/assets/sponsor3.svg",
+    },
+  ];
   return (
     <div>
       <Head>
@@ -91,7 +91,11 @@ const Home: NextPage = () => {
       />
       <Vision cardData={cardData} />
       <Values cardData={valuesData} title={t("values")} cards={cards} />
-      <PartnersSection title={t("partnersBody")} partners={partners} img={"/assets/profile.svg"} />
+      <PartnersSection
+        title={t("partnersBody")}
+        partners={partners}
+        img={"/assets/profile.svg"}
+      />
     </div>
   );
 };

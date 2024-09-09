@@ -1,74 +1,72 @@
 import React from "react";
 
 interface CardWithIconProps {
-    title: string;
-    icon?: string; // Optional icon URL
+  title: string;
+  icon?: string; // Optional icon URL
 }
 
 interface Card {
-    text: string;
-    img?: string; // Optional icon URL
+  text: string;
+  img?: string; // Optional icon URL
 }
 
 interface PropsPageProps {
-    title: string;
-    cardData: CardWithIconProps[]; // Array of cards passed as props
-    cards: Card[]
+  title: string;
+  cardData: CardWithIconProps[]; // Array of cards passed as props
+  cards: Card[];
 }
 
 const CardWithIcon: React.FC<CardWithIconProps> = ({ title, icon }) => {
-    return (
-        <div className="flex flex-col items-center  font-bold text-[#1E1E1E] h-[256px]">
-            <div className="w-[128px] h-[128px] rounded-full bg-[#F5D5AE] shadow-2xl flex items-center justify-center" style={{ boxShadow: "0px 4px 10px rgba(239, 154, 83, 1)" }}>
-                <img src={icon} alt={title} className="mx-auto w-20 h-20" />
-            </div>
-            <div className="flex items-center justify-center mt-4 w-[256px] h-[64px]">
-                <h6 className="text-2xl w-[256px] text-center">{title}</h6>
-            </div>
-        </div >
-    );
+  return (
+    <div className="flex flex-col items-center  font-bold text-[#1E1E1E] h-[256px]">
+      <div
+        className="w-[128px] h-[128px] rounded-full bg-[#F5D5AE] shadow-2xl flex items-center justify-center"
+        style={{ boxShadow: "0px 4px 10px rgba(239, 154, 83, 1)" }}
+      >
+        <img src={icon} alt={title} className="mx-auto w-20 h-20" />
+      </div>
+      <div className="flex items-center justify-center mt-4 w-[256px] h-[50px]">
+        <h6 className="text-2xl w-[256px] text-center">{title}</h6>
+      </div>
+    </div>
+  );
 };
 
 const Card: React.FC<Card> = ({ text, img }) => {
-    return (
-        <div className="flex flex-col items-center  font-bold text-[#1E1E1E] h-[500px]">
-            <div className="w-[400px] h-[500px] rounded- bg-zinc-100 shadow-2xl grid grid-rows-3 gap-4 pt-12 ">
-                <img src={img} alt={text} className="mx-auto w-64 h-64 row-span-2" />
-                <div className="border border-b-[#A990BB] border-b-[6px]  p-4 text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">{text}</div>
-            </div>
-
-        </div >
-    );
+  return (
+    <div className="flex flex-col items-center rounded-xl overflow-hidden font-bold text-[#1E1E1E] mx-10 ">
+      <div className="w-[300px] shadow-2xl bg-[#392467]">
+        <img src={img} alt={text} className="mx-auto w-full h-full" />
+        <div className="border border-b-[#A990BB] border-b-[6px] h-25 p-4  text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">
+          {text}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Values: React.FC<PropsPageProps> = ({ cardData, title, cards }) => {
-    return (
-        <div className="flex flex-col p-16 bg-gradient-to-b from-white to-[#E6D2F5] bg-opacity-20">
-            <div className="text-[60px] font-bold text-[#392467] text-center mb-[72px]">{title}</div>
-            <div className="min-h-[40vh] flex flex-col md:flex-row justify-center gap-4 p-4">
-                {cardData.map((card, index) => (
-                    <CardWithIcon
-                        key={index}
-                        title={card.title}
-                        icon={card.icon}
-                    />
-                ))}
-            </div>
-            <div className="min-h-[60vh] flex flex-col md:flex-row justify-center items-center gap-16 p-4 relative">
-                <div className="min-h-[60vh] flex flex-col md:flex-row justify-center items-center gap-16 p-4 absolute top-0 z-10">
-                    {cards.map((card, index) => (
-                        <Card
-                            key={index}
-                            img={card.img}
-                            text={card.text}
-                        />
-                    ))}
-
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="min-h-[80vh] items-center flex flex-col justify-center relative z-10  mt-10 pb-20 overflow-hidden gap-10">
+      <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587]">
+        Бараа бүтээгдэхүүн & Үйлчилгээ
+      </h1>
+      <div className="min-h-[20vh] flex flex-col md:flex-row justify-center gap-4 -pt-10">
+        {cardData.map((card, index) => (
+          <CardWithIcon key={index} title={card.title} icon={card.icon} />
+        ))}
+      </div>
+      <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587]">
+        Бараа бүтээгдэхүүн & Үйлчилгээ
+      </h1>
+      <div className="flex justify-center items-center gap-10 z-20 ">
+        {cards.map((card, index) => (
+          <Card key={index} img={card.img} text={card.text} />
+        ))}
+      </div>
+      <div className="absolute bottom-0 w-[100vh] h-[60vh] translate-y-[30%]  border-[#392467] border-t-2 rounded-t-full z-10 border-opacity-50"></div>
+    </div>
+  );
 };
-
 
 export default Values;

@@ -27,20 +27,24 @@ const Masthead: React.FC = () => {
       }}
       className="min-h-screen flex flex-col items-center justify-center "
     >
-            <div
+      <div
         className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       >
-        <Navbar/>
+        <Navbar />
       </div>
-        <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
-         <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
+      <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
+      <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
       <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">
         <h1 className="-mb-3 text-[50px] xl:text-[120px]">CARAVAN</h1>
         <h2 className="mb-3 flex flex-col gap-2 font-roboto font-light">
-          <span className=" text-[20px] mb-2 xl:text-[40px] tracking-widest">TMB TRADE LLC</span>
+          <span className=" text-[20px] mb-2 xl:text-[40px] tracking-widest">
+            TMB TRADE LLC
+          </span>
           <div>
-            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[px]">Silk Road to Worldwide</span>
+            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[px]">
+              Silk Road to Worldwide
+            </span>
           </div>
         </h2>
       </div>
@@ -50,7 +54,7 @@ const Masthead: React.FC = () => {
         }`}
       >
         <Image
-            alt=""
+          alt=""
           src="/assets/arrow-down.png"
           width={188 / 3}
           height={105 / 3}

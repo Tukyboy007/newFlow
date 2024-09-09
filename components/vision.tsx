@@ -25,7 +25,8 @@ const Card: React.FC<CardProps> = ({ title, text, image }) => {
         <ul className="text-gray-700 mt-2 space-y-1 list-disc list-inside">
           {text.map((item, index) => (
             <li key={index} className=" leading-6 flex items-start">
-              <span className="text-[#5D3587] font-semibold mr-2">•</span> {/* Custom bullet styling */}
+              <span className="text-[#5D3587] font-semibold mr-2">•</span>{" "}
+              {/* Custom bullet styling */}
               <span>{item}</span>
             </li>
           ))}
@@ -39,10 +40,16 @@ const Card: React.FC<CardProps> = ({ title, text, image }) => {
 
 const Vision: React.FC<VisionProps> = ({ cardData }) => {
   return (
-    <div className="mt-16 min-h-[80vh] flex flex-col md:flex-row  items-center justify-center gap-10 bg-[url('/assets/2.png')] bg-cover bg-no-repeat bg-center p-4">
+    <div className="relative mt-16 min-h-[80vh] flex flex-col md:flex-row  items-center justify-center gap-10 bg-[url('/assets/2.png')] bg-cover bg-no-repeat bg-center p-4 z-0">
       {cardData.map((card, index) => (
-        <Card key={index} title={card.title} text={card.text} image={card.image} />
+        <Card
+          key={index}
+          title={card.title}
+          text={card.text}
+          image={card.image}
+        />
       ))}
+      <div className="absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-white to-transparent"></div>
     </div>
   );
 };
