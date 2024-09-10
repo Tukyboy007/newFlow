@@ -3,7 +3,11 @@ import Image from "next/image";
 import { ScrollContext } from "../utils/scroll-observer";
 import Navbar from "./navbar";
 
-const Masthead: React.FC = () => {
+interface buttons {
+  buttons: string[];
+}
+
+const Masthead: React.FC<buttons> = ({ buttons }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const refContainer = useRef<HTMLDivElement>(null);
   const { scrollY } = useContext(ScrollContext);
@@ -31,7 +35,7 @@ const Masthead: React.FC = () => {
         className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       >
-        <Navbar />
+        <Navbar buttons={buttons} />
       </div>
       <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
       <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
@@ -49,9 +53,8 @@ const Masthead: React.FC = () => {
         </h2>
       </div>
       <div
-        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${
-          imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
-        }`}
+        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
+          }`}
       >
         <Image
           alt=""

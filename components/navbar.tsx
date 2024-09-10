@@ -2,13 +2,17 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "./lang";
+interface buttons {
+  buttons: string[];
+}
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<buttons> = ({ buttons }) => {
+
   const navItems = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Services", link: "/services" },
-    { name: "Contact", link: "/contact" },
+    { name: buttons[0], link: "/" },
+    { name: buttons[1], link: "/about" },
+    { name: buttons[2], link: "/services" },
+    { name: buttons[3], link: "/contact" },
   ];
   return (
     <nav className="p-4 xl:flex md:flex flex-row justify-around hidden px-20 gap-10 z-10 w-full sticky top-0">
