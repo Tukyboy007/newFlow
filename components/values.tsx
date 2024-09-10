@@ -34,9 +34,9 @@ const CardWithIcon: React.FC<CardWithIconProps> = ({ title, icon }) => {
 
 const Card: React.FC<Card> = ({ text, img }) => {
   return (
-    <div className="flex flex-col items-center rounded-xl overflow-hidden font-bold text-[#1E1E1E] mx-10 ">
-      <div className="w-[300px] shadow-2xl bg-[#392467]">
-        <img src={img} alt={text} className="mx-auto w-full h-full" />
+    <div className="flex flex-col items-center overflow-hidden font-bold text-[#1E1E1E] mx-10 shadow-2xl shadow-[#392467] pt-2">
+      <div className="w-[280px] shadow-2xl bg-[#ffffff]">
+        <img src={img} alt={text} className=" w-full h-full" />
         <div className="border border-b-[#A990BB] border-b-[6px] h-25 p-4  text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">
           {text}
         </div>
@@ -47,7 +47,7 @@ const Card: React.FC<Card> = ({ text, img }) => {
 
 const Values: React.FC<PropsPageProps> = ({ cardData, title, cards }) => {
   return (
-    <div className="min-h-[80vh] items-center flex flex-col justify-center relative z-10  mt-10 pb-20 overflow-hidden gap-10">
+    <div className="min-h-[80vh] items-center flex flex-col justify-center relative z-10  mt-10 pb-20 overflow-hidden gap-10 p-4">
       <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587]">
         Бараа бүтээгдэхүүн & Үйлчилгээ
       </h1>
@@ -56,10 +56,10 @@ const Values: React.FC<PropsPageProps> = ({ cardData, title, cards }) => {
           <CardWithIcon key={index} title={card.title} icon={card.icon} />
         ))}
       </div>
-      <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587]">
+      <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587] flex justify-self-center">
         Бараа бүтээгдэхүүн & Үйлчилгээ
       </h1>
-      <div className="flex justify-center items-center gap-10 z-20 ">
+      <div className="flex justify-center items-center gap-10 z-20 xl:flex-row flex-col">
         {cards.map((card, index) => (
           <Card key={index} img={card.img} text={card.text} />
         ))}

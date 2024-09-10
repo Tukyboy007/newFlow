@@ -37,12 +37,12 @@ const Masthead: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
       <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">
         <h1 className="-mb-3 text-[50px] xl:text-[120px]">CARAVAN</h1>
-        <h2 className="mb-3 flex flex-col gap-2 font-roboto font-light">
+        <h2 className="mb-3 flex flex-col gap-2 font-roboto font-light justify-center ">
           <span className=" text-[20px] mb-2 xl:text-[40px] tracking-widest">
             TMB TRADE LLC
           </span>
           <div>
-            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px]  border-2 border-[#392467] px-10 -tracking-[px]">
+            <span className="font-bold text-[20px] xl:text-[24px] rounded-[25px] -tracking-[px]">
               Silk Road to Worldwide
             </span>
           </div>

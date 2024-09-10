@@ -55,11 +55,11 @@ const Home: NextPage = () => {
   const cards = [
     {
       text: t("productsBody1"),
-      img: "/assets/back1.png",
+      img: "/assets/box.svg",
     },
     {
       text: t("productsBody2"),
-      img: "/assets/back3.png",
+      img: "/assets/shipment.svg",
     },
   ];
 
