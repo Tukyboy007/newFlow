@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { ScrollContext } from "../utils/scroll-observer";
-import Navbar from "./navbar";
 
 interface buttons {
   buttons: string[];
