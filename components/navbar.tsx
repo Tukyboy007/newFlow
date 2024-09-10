@@ -8,22 +8,47 @@ interface Buttons {
 }
 
 const Navbar: React.FC<Buttons> = ({ buttons }) => {
+  const [isSticky, setIsSticky] = useState(false);
+
   const navItems = [
-    { name: buttons[0], link: "#home" },     // ID for home section
-    { name: buttons[1], link: "#about" },    // ID for about section
+    { name: buttons[0], link: "#home" }, // ID for home section
+    { name: buttons[1], link: "#about" }, // ID for about section
     { name: buttons[2], link: "#services" }, // ID for services section
-    { name: buttons[3], link: "#contact" },  // ID for contact section
+    { name: buttons[3], link: "#contact" }, // ID for contact section
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="p-4 xl:flex md:flex flex-row justify-around hidden px-20 gap-10 z-10 w-full sticky top-0">
+    <nav
+      className={`p-4 hidden xl:flex md:flex flex-row justify-between items-center px-20 gap-10 z-50 w-full top-0 transition-all duration-300 ${
+        isSticky ? "sticky bg-white shadow-md" : "absolute bg-transparent"
+      }`}
+    >
+      {/* Logo with optional dynamic sizing */}
       <Image
-        className="translate-x-15 cursor-pointer"
+        className="cursor-pointer"
         alt="Logo"
         src="/assets/logo.svg"
-        width={290}
-        height={90} // Corrected height
+        width={150}
+        height={50}
+        priority={true}
       />
+      {/* Navigation Links */}
       <div className="w-[40%] pl-5">
         <ul className="flex space-x-6 font-bold">
           {navItems.map((item, index) => (
@@ -31,12 +56,14 @@ const Navbar: React.FC<Buttons> = ({ buttons }) => {
               key={index}
               className="text-[#392467] px-4 py-2 hover:bg-[#392467] hover:text-[white] rounded-[25px] transition-all duration-300 cursor-pointer"
             >
-              {/* Using Next.js Link component to navigate to IDs */}
-              <Link href={item.link} scroll={false}>{item.name}</Link>
+              <Link href={item.link} scroll={false}>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
+      {/* Language Switcher */}
       <div className="flex flex-row px-4">
         <LanguageSwitcher />
       </div>

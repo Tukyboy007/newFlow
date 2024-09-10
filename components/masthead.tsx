@@ -7,7 +7,7 @@ interface buttons {
   buttons: string[];
 }
 
-const Masthead: React.FC<buttons> = ({ buttons }) => {
+const Masthead: React.FC<buttons> = ({}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const refContainer = useRef<HTMLDivElement>(null);
   const { scrollY } = useContext(ScrollContext);
@@ -29,14 +29,12 @@ const Masthead: React.FC<buttons> = ({ buttons }) => {
       style={{
         transform: `translateY(-${progress * 20}vh)`,
       }}
-      className="min-h-screen flex flex-col items-center justify-center "
+      className="min-h-screen flex flex-col items-center justify-center top-0 z-0"
     >
       <div
         className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-      >
-        <Navbar buttons={buttons} />
-      </div>
+      ></div>
       <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
       <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
       <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">
@@ -53,8 +51,9 @@ const Masthead: React.FC<buttons> = ({ buttons }) => {
         </h2>
       </div>
       <div
-        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
-          }`}
+        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${
+          imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
+        }`}
       >
         <Image
           alt=""
