@@ -1,12 +1,13 @@
 import Head from "next/head";
 import type { NextPage } from "next";
-import LanguageSwitcher from "@/components/lang";
 import { useTranslation } from "react-i18next";
 import Masthead from "@/components/masthead";
 import Introduction from "@/components/introduction";
 import Vision from "@/components/vision";
 import Values from "@/components/values";
 import PartnersSection from "@/components/partner";
+import ContactPage from "@/components/contact";
+import Navbar from "@/components/navbar";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();

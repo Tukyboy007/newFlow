@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 interface IntroductionProps {
@@ -8,11 +7,7 @@ interface IntroductionProps {
   text2: string;
 }
 
-const Introduction: React.FC<IntroductionProps> = ({
-  title,
-  text1,
-  text2
-}) => {
+const Introduction: React.FC<IntroductionProps> = ({ title, text1, text2 }) => {
   return (
     <div className="min-h-[50vh] flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 p-4">
       <div>
@@ -22,9 +17,7 @@ const Introduction: React.FC<IntroductionProps> = ({
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[#392467]">
           {title}
         </h1>
-        <div className="text-[#000000] w-full md:w-[500px]">
-          {text1}
-        </div>
+        <div className="text-[#000000] w-full md:w-[500px]">{text1}</div>
         <div className="text-[#000000] font-bold w-full md:w-[500px]">
           {text2}
         </div>
