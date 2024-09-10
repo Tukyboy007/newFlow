@@ -7,8 +7,6 @@ import Introduction from "@/components/introduction";
 import Vision from "@/components/vision";
 import Values from "@/components/values";
 import PartnersSection from "@/components/partner";
-import Navbar from "@/components/navbar";
-import NavbarMobile from "@/utils/navbarmobile";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -79,6 +77,8 @@ const Home: NextPage = () => {
       logo: "/assets/sponsor3.svg",
     },
   ];
+
+  const contactData = [t("contactBody1"), t("contactBody2"), t("contactBody3")];
   return (
     <div>
       <Head>
@@ -104,6 +104,9 @@ const Home: NextPage = () => {
           partners={partners}
           img={"/assets/profile.svg"}
         />
+      </div>
+      <div id="contact">
+        <ContactPage data={contactData} />
       </div>
     </div>
   );
