@@ -19,24 +19,24 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
           <div className="md:flex-1 md:basis-1/3 p-8 text-center md:text-left space-y-5">
             <h1 className="text-2xl font-bold">Contact Us</h1>
             <p className="tracking-wide flex gap-2">
-              <div className="w-[80px] h-[80px]">
+              <span className="w-[80px] h-[80px]">
                 <FontAwesomeIcon
                   icon={faLocationArrow}
                   className="text-purple-200"
                 />
-              </div>
+              </span>
               {loc}
             </p>
             <p className="tracking-wide flex gap-2">
-              <div className="w-[20px] h-[20px]">
+              <span className="w-[20px] h-[20px]">
                 <FontAwesomeIcon icon={faPhone} className="text-purple-200" />{" "}
-              </div>
+              </span>
               {phone1}
             </p>
-            <p className="tracking-wide flex gap-2">
-              <div className="w-[20px] h-[20px]">
+            <p className="tracking-wide flex">
+              <span className="w-[20px] h-[20px]">
                 <FontAwesomeIcon icon={faPhone} className="text-purple-200" />{" "}
-              </div>
+              </span>
               {phone2}
             </p>
           </div>
