@@ -50,7 +50,7 @@ const Card: React.FC<Card> = ({ text, img }) => {
 const Values: React.FC<PropsPageProps> = ({ cardData, title, cards }) => {
     return (
         <div className="min-h-[80vh] items-center flex flex-col justify-center relative z-10  mt-10 pb-20 overflow-hidden gap-10 p-4">
-            <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-[#5d3587]">
+            <h1 className="text-[34px] font-roboto pb-5 font-bold tracking-tighter text-black">
                 {title}
             </h1>
             <div className="min-h-[20vh] flex flex-col md:flex-row justify-center gap-4 -pt-10">
