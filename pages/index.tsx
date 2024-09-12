@@ -85,6 +85,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Caravan</title>
         <meta name="CARAVAN" content="TMB TRADE LLC" />
+        <link rel="icon" href="/assets/logo3.svg" />
       </Head>
       <Navbar buttons={buttons} />
       <div id="home">

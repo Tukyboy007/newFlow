@@ -35,8 +35,8 @@ const Masthead: React.FC<buttons> = ({ }) => {
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       ></div>
 
-      <div className="bg-[#e5f993] w-full min-h-screen absolute top-0  ">
-        <div className="w-full min-h-screen absolute top-0 bg-[url('/assets/back.webp')] z-10 opacity-30"></div>
+      <div className="bg-[#fcd34d] w-full min-h-screen absolute top-0  ">
+        <div className="w-full min-h-screen absolute top-0 bg-[url('/assets/back.webp')] z-10 opacity-70 bg-no-repeat bg-cover bg-center h-screen"></div>
       </div>
       <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
       <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">

@@ -12,7 +12,7 @@ interface VisionProps {
 
 const Card: React.FC<CardProps> = ({ title, text, image }) => {
   return (
-    <div className="mt-4 xl:w-[496px] h-[300px] p-4 bg-white shadow-lg sm:p-6 max-w-sm text-center relative border-b-[8px] border-[#5D3587] border-opacity-80">
+    <div className="mt-4 w-full xl:w-[496px] h-auto p-4 bg-white shadow-lg sm:p-6 max-w-full text-center relative border-b-[8px] border-[#5D3587] border-opacity-80">
       {image && (
         <div className="mb-4 absolute -top-[48px] left-1/2 -translate-x-1/2 w-24 h-24 bg-white rounded-full flex items-center justify-center">
           <div className="w-20 h-20 bg-[#F5D5AE] rounded-full flex items-center justify-center">
@@ -20,20 +20,23 @@ const Card: React.FC<CardProps> = ({ title, text, image }) => {
           </div>
         </div>
       )}
-      <h2 className="text-[#5D3587] text-2xl font-bold mt-8 pt-2">{title}</h2>
+      <h2 className="text-[#5D3587] text-2xl font-bold mt-8 pt-2 break-words">
+        {title}
+      </h2>
       {Array.isArray(text) ? (
-        <ul className="text-gray-700 mt-2 space-y-1 list-disc list-inside">
+        <ul className="text-gray-700 mt-2 space-y-1 list-disc list-inside break-words">
           {text.map((item, index) => (
-            <li key={index} className=" leading-6 flex items-start">
-              <span className="text-[#5D3587] font-semibold mr-2">•</span>{" "}
+            <li key={index} className="leading-6 flex items-start">
+              <span className="text-[#5D3587] font-semibold mr-2">•</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-gray-700 mt-4 ">{text}</p>
+        <p className="text-gray-700 mt-4 break-words">{text}</p>
       )}
     </div>
+
   );
 };
 
