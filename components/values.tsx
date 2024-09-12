@@ -36,7 +36,9 @@ const Card: React.FC<Card> = ({ text, img }) => {
     return (
         <div className="flex flex-col items-center overflow-hidden font-bold text-[#1E1E1E] mx-10 shadow-2xl shadow-[#392467] pt-2">
             <div className="w-[280px] shadow-2xl bg-[#ffffff]">
-                <img src={img} alt={text} className=" w-full h-full" />
+                <div className="w-full h-w-full p-10">
+                    <img src={img} alt={text} className="" />
+                </div>
                 <div className="border border-b-[#A990BB] border-b-[6px] h-25 p-4  text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">
                     {text}
                 </div>
@@ -56,7 +58,7 @@ const Values: React.FC<PropsPageProps> = ({ cardData, title, cards }) => {
                     <CardWithIcon key={index} title={card.title} icon={card.icon} />
                 ))}
             </div>
-            <div className="flex justify-center items-center gap-10 z-20 xl:flex-row flex-col">
+            <div className="flex justify-center items-center gap-10 z-20 md:flex-row flex-col">
                 {cards.map((card, index) => (
                     <Card key={index} img={card.img} text={card.text} />
                 ))}

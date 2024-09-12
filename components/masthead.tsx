@@ -6,7 +6,7 @@ interface buttons {
   buttons: string[];
 }
 
-const Masthead: React.FC<buttons> = ({}) => {
+const Masthead: React.FC<buttons> = ({ }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const refContainer = useRef<HTMLDivElement>(null);
   const { scrollY } = useContext(ScrollContext);
@@ -34,7 +34,10 @@ const Masthead: React.FC<buttons> = ({}) => {
         className={`flex-grow-0  transition-opacity duration-1000 z-20 w-full top-0
           ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       ></div>
-      <div className="bg-[url('/assets/back.webp')] w-full min-h-screen absolute top-0 bg-custom-blur"></div>
+
+      <div className="bg-[#65a30d] w-full min-h-screen absolute top-0  ">
+        <div className="w-full min-h-screen absolute top-0 bg-[url('/assets/back.webp')] z-10 opacity-60 blur"></div>
+      </div>
       <div className="absolute inset-0 bg-gradient-to-l from-[#e7be79] to-[#d6acac] opacity-50 blur-background"></div>
       <div className="p-12 font-bold gap-2 text-[#392467] text-center flex-1 flex item-center justify-center flex-col z-20">
         <h1 className="-mb-3 text-[50px] xl:text-[120px]">CARAVAN</h1>
@@ -50,9 +53,8 @@ const Masthead: React.FC<buttons> = ({}) => {
         </h2>
       </div>
       <div
-        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${
-          imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
-        }`}
+        className={`flex-grow-0 pb-20 md:pd-10 transition-all z-10 duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0 -translate-y-10"
+          }`}
       >
         <Image
           alt=""
