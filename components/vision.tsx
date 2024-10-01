@@ -12,7 +12,7 @@ interface VisionProps {
 
 const Card: React.FC<CardProps> = ({ title, text, image }) => {
   return (
-    <div className="mt-4 w-full xl:w-[496px] h-auto p-4 bg-white shadow-lg sm:p-6 max-w-full text-center relative border-b-[8px] border-[#5D3587] border-opacity-80">
+    <div className="mt-4 w-full xl:w-[496px] lg:h-[300px] md:h-[350px] p-4 bg-white shadow-lg sm:p-6 max-w-full text-center relative border-b-[8px] border-[#5D3587] border-opacity-80">
       {image && (
         <div className="mb-4 absolute -top-[48px] left-1/2 -translate-x-1/2 w-24 h-24 bg-white rounded-full flex items-center justify-center">
           <div className="w-20 h-20 bg-[#F5D5AE] rounded-full flex items-center justify-center">

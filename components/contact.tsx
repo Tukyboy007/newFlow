@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow, faPhone } from "@fortawesome/free-solid-svg-icons";
+import emailjs from "emailjs-com";
 
 interface ContactProps {
   data: string[];
 }
 
 const ContactPage: React.FC<ContactProps> = ({ data }) => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_t2ldxpq", // Replace with your EmailJS service ID
+          "template_roeysmh", // Replace with your EmailJS template ID
+          form.current,
+          "TYTQlGRbpGeJW19u9" // Replace with your EmailJS public key
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Message sent successfully!");
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Failed to send the message. Please try again.");
+          }
+        );
+    }
+  };
+
   const loc = data[0];
   const phone1 = data[1];
   const phone2 = data[2];
@@ -42,7 +69,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
           </div>
           {/* Right side (form) taking more space */}
           <div className="bg-white text-gray-800 p-8 md:flex-2 md:basis-2/3">
-            <form className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium" htmlFor="name">
                   Name
@@ -50,6 +77,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
                 <input
                   type="text"
                   id="name"
+                  name="user_name"
                   className="mt-1 block w-full p-2 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md"
                   placeholder="Your name"
                 />
@@ -61,6 +89,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
                 <input
                   type="email"
                   id="email"
+                  name="user_email"
                   className="mt-1 block w-full p-2 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md"
                   placeholder="Your email"
                 />
@@ -71,6 +100,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   className="h-32 mt-1 block w-full p-2 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md"
                   placeholder="Your message"
                 ></textarea>
