@@ -18,7 +18,6 @@ const Navbar: React.FC<Buttons> = ({ buttons }) => {
     { name: buttons[3], link: "#contact" },
   ];
 
-  // Function to toggle the mobile menu
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
@@ -41,9 +40,8 @@ const Navbar: React.FC<Buttons> = ({ buttons }) => {
 
   return (
     <nav
-      className={`p-4 flex justify-between items-center px-6 md:px-10 lg:px-20 z-50 w-full top-0 transition-all duration-300 ${
-        isSticky ? "sticky bg-white shadow-md" : "absolute bg-transparent"
-      }`}
+      className={`p-4 flex justify-between items-center px-6 md:px-10 lg:px-20 z-50 w-full top-0 transition-all duration-300 ${isSticky ? "sticky bg-white shadow-md" : "absolute bg-transparent"
+        }`}
     >
       {/* Logo */}
       <Image
@@ -71,13 +69,14 @@ const Navbar: React.FC<Buttons> = ({ buttons }) => {
         </ul>
       </div>
 
-      {/* Language Switcher */}
+      {/* Language Switcher (hidden on small screens, visible on larger) */}
       <div className="hidden lg:flex flex-row px-4">
         <LanguageSwitcher />
       </div>
 
       {/* Hamburger Menu for Mobile */}
       <div className="lg:hidden flex items-center">
+        <LanguageSwitcher />
         <button
           onClick={toggleMenu}
           className="text-[#392467] focus:outline-none"
@@ -102,22 +101,35 @@ const Navbar: React.FC<Buttons> = ({ buttons }) => {
       {/* Mobile Menu (shown when toggled) */}
       {isMenuOpen && (
         <div
-          className={`lg:hidden absolute top-16 left-0 w-full ${
-            isSticky ? "bg-white shadow-md" : "bg-transparent"
-          }`}
+          className={`lg:hidden absolute top-16 left-0 w-full ${isSticky ? "bg-white shadow-md" : "bg-transparent"
+            } transition-all duration-300`}
         >
-          <ul className="flex flex-row justify-center space-x-4 py-4">
-            {navItems.map((item, index) => (
-              <li
-                key={index}
-                className="text-[#392467] px-4 py-2 hover:bg-[#392467] hover:text-white whitespace-nowrap rounded-[25px] transition-all duration-300 cursor-pointer"
-              >
-                <Link href={item.link} scroll={false}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-wrap justify-center items-center">
+            <ul className="flex flex-col space-y-4 py-4 pr-2">
+              {navItems.slice(0, Math.ceil(navItems.length / 2)).map((item, index) => (
+                <li
+                  key={index}
+                  className="text-[#392467] px-4 py-2 hover:bg-[#392467] hover:text-white whitespace-nowrap rounded-[25px] transition-all duration-300 cursor-pointer"
+                >
+                  <Link href={item.link} scroll={false}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="flex flex-col space-y-4 py-4 pl-2">
+              {navItems.slice(Math.ceil(navItems.length / 2)).map((item, index) => (
+                <li
+                  key={index}
+                  className="text-[#392467] px-4 py-2 hover:bg-[#392467] hover:text-white whitespace-nowrap rounded-[25px] transition-all duration-300 cursor-pointer"
+                >
+                  <Link href={item.link} scroll={false}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </nav>
