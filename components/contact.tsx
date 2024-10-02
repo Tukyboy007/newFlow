@@ -16,7 +16,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
     if (form.current) {
       emailjs
         .sendForm(
-          "service_t2ldxpq", // Replace with your EmailJS service ID
+          "service_5el1f6a", // Replace with your EmailJS service ID
           "template_roeysmh", // Replace with your EmailJS template ID
           form.current,
           "TYTQlGRbpGeJW19u9" // Replace with your EmailJS public key
