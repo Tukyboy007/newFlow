@@ -39,7 +39,7 @@ const Card: React.FC<Card> = ({ text, img }) => {
                 <div className="w-full h-w-full p-10">
                     <img src={img} alt={text} className="" />
                 </div>
-                <div className="border border-b-[#A990BB] border-b-[6px] h-25 p-4  text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">
+                <div className="border border-b-[#A990BB] border-b-[6px] h-[100px] p-4  text-center bg-[#392467] text-white row-span-1 flex items-center justify-center w-full">
                     {text}
                 </div>
             </div>

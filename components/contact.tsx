@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationArrow, faPhone, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import emailjs from "emailjs-com";
 
 interface ContactProps {
@@ -37,6 +37,7 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
   const loc = data[0];
   const phone1 = data[1];
   const phone2 = data[2];
+  const mail = data[3];
 
   return (
     <div className="min-h-[80vh] bg-zinc-100 flex justify-center items-center p-4">
@@ -53,6 +54,12 @@ const ContactPage: React.FC<ContactProps> = ({ data }) => {
                 />
               </span>
               {loc}
+            </p>
+            <p className="tracking-wide flex gap-2">
+              <span className="w-[20px] h-[20px]">
+                <FontAwesomeIcon icon={faMailBulk} className="text-purple-200" />{" "}
+              </span>
+              {mail}
             </p>
             <p className="tracking-wide flex gap-2">
               <span className="w-[20px] h-[20px]">

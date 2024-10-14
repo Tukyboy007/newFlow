@@ -79,7 +79,7 @@ const Home: NextPage = () => {
     },
   ];
 
-  const contactData = [t("contactBody1"), t("contactBody2"), t("contactBody3")];
+  const contactData = [t("contactBody1"), t("contactBody2"), t("contactBody3"), t("contactBody4")];
   return (
     <div className="!scroll-smooth">
       <Head>
